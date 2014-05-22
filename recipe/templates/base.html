@@ -1,0 +1,97 @@
+{% load staticfiles %}
+
+<meta charset="utf-8"/>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="{% static 'css/camera.css' %}" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Ruthie' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Kaushan+Script&subset=latin,latin-ext' rel='stylesheet'
+      type='text/css'>
+<link href="{% static 'css/main.css' %}" rel="stylesheet">
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery.mobile.customized.min.js' %}"></script>
+<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'js/camera.min.js' %}"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<!-- container kezdete -->
+<div class="container">
+    <!-- Menüsor kezdete -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url "home" %}">Le'<br/> Tisha</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="{% url "tips" %}">Tippek</a></li>
+                    <li><a href="#">Oszd meg saját recepted!</a></li>
+
+                    <!-- Receptek menü /leugró/ -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Receptek<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+
+                            <!-- dinamikus kategória kezdete -->
+                            {% for category in categories %}
+                                <li><a href="#">{{category.name}}</a></li>
+                            {% endfor %}
+                            <!-- dinamikus kategória vége-->
+
+                            <li class="divider"></li>
+                            <li><a href="#">Legkedveltebb receptek</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Legfrissebb receptek</a></li>
+                        </ul>
+                    </li>
+                    <!-- Receptek menü vége /leugró/ -->
+
+                </ul>
+                <!-- Keresés kezdete -->
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control kereses" placeholder="Keresés">
+                    </div>
+                    <button type="submit" class="btn btn-default">Keresés</button>
+                </form>
+                <!-- Kereső gomb vége -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Belépés gomb-->
+                    <li><a href="#">Belépés</a></li>
+                    <!-- Regisztráció gomb -->
+                    <li><a href="#">Regisztráció</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <!-- Menüsor vége -->
+        <!-- tartalom -->
+        {% block tartalom %}
+        {% endblock %}
+        <!-- tartalom vége -->
+    <!-- lábjegyzet kezdete -->
+    <footer>
+        <p>
+            &copy; 2014 Le'Tisha Group
+        </p>
+    </footer>
+    <!-- lábjegyzet vége -->
+
+</div> <!-- container vége -->
+
+<!-- javascriptek -->
+{% block javascript %}
+{% endblock %}
+<!-- javascriptek vége -->

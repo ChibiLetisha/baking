@@ -1,65 +1,109 @@
-.banner {
-margin-bottom: 20px;
-z-index: 1;
+.addtip td {
+    color: #F5AB76;
 }
-.banner .slider {
-position: relative;
+
+body {
+   background-color: #F5AB76;
 }
-.banner .slider ul {
-margin: 0;
-padding: 0;
-list-style: none;
-width: 100%;
-height: 447px;
-overflow: hidden;
-position: relative;
+
+.bejegyzes {
+    padding-left: 200px;
+    text-align: justify;
+    padding-right: 50px;
 }
-.banner .slider ul li {
-position: absolute;
-top: 0;
-left: 50%;
+
+.btn-primary {
+    background-color: #F5AB76;
+    border-color: #F5AB76;
 }
-.banner .slider .dots:after {
-display: table;
-clear: both;
-content: "";
+
+.container {
+    background-color: #ffffff;
+    padding : 0px;
 }
-.banner .slider .dots {
-position: absolute;
-bottom: 20px;
-left: 60%;
-z-index: 40;
- *zoom: 1;
+
+footer {
+    height: 50px;
+    color: #F5AB76;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-left: 15px;
+    background-color: #F0F0F0;
+    margin-top: 20px;
 }
-.banner .slider .dots a {
-display: block;
-float: left;
-width: 12px;
-height: 12px;
-margin-right: 10px;
-text-indent: -9999em;
-background: #000;
-border-radius: 10px;
+
+.kereses {
+    font-style: italic;
 }
-.banner .slider .dots .cur {
-background: #329;
+
+label {
+    color: #F5AB76;
+    font-family: 'Kaushan Script', cursive;
 }
-.banner .slider .arrow {
-width: 65%;
-position: absolute;
-top: 45%;
-left: 18%;
-z-index: 50;
+
+#id_category li {
+    list-style-type: none;
+    float: left;
+    width: 205px;
+    font-family: 'Kaushan Script', cursive;
 }
-.banner .slider .arrow a {
-font-family: "Microsoft YaHei";
-font-size: 34px;
-font-weight: 700;
-color: #fff;
+
+.navbar-default .navbar-nav>li>a{
+    color: #F5AB76;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 20px;
 }
-.banner .slider .arrow .btn-left {
-float: left;
+
+.navbar-default .navbar-brand {
+    font-family: 'Ruthie', cursive;
+    color: #F5AB76;
+    font-size: 36px;
+    margin-top: -8px;
 }
-.banner .slider .arrow .btn-right {
-float: right;
+.nav-stacked {
+    float: left;
+}
+.nav-stacked a {
+    color: #F5AB76;
+}
+
+.tiptitle {
+    color: #F5AB76;
+    font-family: 'Kaushan Script', cursive;
+}
+
+p a {
+    color: #F5AB76;
+    text-decoration: none;
+}
+
+.white-bg {
+    background-color: #ffffff;
+}
+
+.white-bg>div {
+    width: 320px;
+    height: 340px;
+    margin-right: 32px;
+    margin-left: 38px;
+    text-align: justify;
+}
+.white-bg h1 {
+    text-align: center;
+}
+
+.white-bg h1 a {
+    color: #F5AB76;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 40px;
+}
+
+.white-bg h1 a:hover{
+    text-decoration: none;
+}
+
+.white-bg.row {
+    margin: 0;
 }

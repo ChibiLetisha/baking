@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+<!-- tartalom kezdete -->
+{% block tartalom %}
+
+<!-- saját tipp menü kezdete -->
+<ul class="nav nav-pills nav-stacked">
+  <li><a href="{% url "newtips" %}">Tipp létrehozása</a></li>
+  <li><a href="{% url "mytips" %}">Saját tippjeim</a></li>
+  <li><a href="#">Kommentjeim</a></li>
+</ul>
+<!-- saját tipp menü vége -->
+
+<!-- tipp bejegyzések -->
+{% for tip in tips %}
+    <div class="bejegyzes">
+        <h1 class="tiptitle">{{ tip.title }}</h1>
+        <p>{{ tip.post|truncatewords:90|slice:"-4" }} <a href="{% url "specifictip" tip.pk %}">Tovább</a></p>
+        {% if not forloop.last %} <hr> {% endif %}
+    </div>
+{% endfor %}
+<!-- tipp bejegyzések vége -->
+
+{% endblock %}
+<!-- tartalom vége -->

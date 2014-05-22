@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+<!-- tartalom kezdete -->
+{% block tartalom %}
+
+<!-- saját tipp menü kezdete -->
+<ul class="nav nav-pills nav-stacked">
+  <li><a href="{% url "newtips" %}">Tipp létrehozása</a></li>
+  <li><a href="{% url "mytips" %}">Saját tippjeim</a></li>
+  <li><a href="#">Kommentjeim</a></li>
+</ul>
+<!-- saját tipp menü vége -->
+
+<!-- újtipp bejegyzések -->
+<form action="" method="post">
+<table class="addtip">
+    {% csrf_token %}
+    {{ newtips.as_table }}
+    <tr>
+        <td colspan="2">
+            <!-- Létrehozás gomb -->
+            <input type="submit" class="btn btn-primary" value="Létrehozás">
+            <!-- Mégse gomb -->
+            <a href="{% url "tips" %}" class="btn btn-danger">Mégse</a>
+        </td>
+    </tr>
+</table>
+</form>
+<!-- újtipp bejegyzések vége -->
+
+{% endblock %}
+<!-- tartalom vége -->%}

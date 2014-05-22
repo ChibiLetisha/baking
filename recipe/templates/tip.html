@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+<!-- tartalom kezdete -->
+{% block tartalom %}
+
+    <!-- saját tipp menü kezdete -->
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="{% url "newtips" %}">Tipp létrehozása</a></li>
+      <li><a href="{% url "mytips" %}">Saját tippjeim</a></li>
+      <li><a href="#">Kommentjeim</a></li>
+    </ul>
+    <!-- saját tipp menü vége -->
+
+    <!-- tipp bejegyzések -->
+    <div class="bejegyzes">
+        <h1 class="tiptitle">{{ tip.title }}</h1>
+        <p>{{ tip.post }}</p>
+    </div>
+    <!-- tipp bejegyzések vége -->
+
+{% endblock %}
+<!-- tartalom vége -->
