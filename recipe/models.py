@@ -10,8 +10,9 @@ class Category(models.Model):
 class Recipe(models.Model):
     title = models.CharField(max_length=255)
     post = models.TextField("Description")
-    date = models.DateTimeField()
+    date = models.DateTimeField(auto_now_add=True)
     category = models.ManyToManyField(Category)
+    user = models.ForeignKey(User, null=True, blank=True)
 
     def __unicode__(self):
         return self.title
@@ -25,4 +26,3 @@ class Tip(models.Model):
 
     def __unicode__(self):
         return self.title
-

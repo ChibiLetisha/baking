@@ -1,5 +1,22 @@
-<h1>{{ blog.title }}</h1>
-<small>{{ blog.date }}</small>
-<p>{{ blog.post }}</p>
+{% extends "base.html" %}
 
-<a href="{% url "home" %}">Vissza</a>
+<!-- tartalom kezdete -->
+{% block tartalom %}
+
+    <!-- saját recept menü kezdete -->
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="{% url "newrecipes" %}">Recept létrehozása</a></li>
+      <li><a href="{% url "myrecipes" %}">Saját receptjeim</a></li>
+      <li><a href="#">Kommentjeim</a></li>
+    </ul>
+    <!-- saját recept menü vége -->
+
+    <!-- recept bejegyzések -->
+    <div class="bejegyzes">
+        <h1 class="recipetitle">{{ recipe.title }}</h1>
+        <p>{{ recipe.post }}</p>
+    </div>
+    <!-- recept bejegyzések vége -->
+
+{% endblock %}
+<!-- tartalom vége -->

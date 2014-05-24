@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class=""><a href="{% url "tips" %}">Tippek</a></li>
-                    <li><a href="#">Oszd meg saját recepted!</a></li>
+                    <li><a href="{% url "sharerecipes" %}">Oszd meg saját recepted!</a></li>
 
                     <!-- Receptek menü /leugró/ -->
                     <li class="dropdown">
@@ -44,32 +44,32 @@
 
                             <!-- dinamikus kategória kezdete -->
                             {% for category in categories %}
-                                <li><a href="#">{{category.name}}</a></li>
+                                <li><a href="{% url "viewrecipes" category.pk %}">{{category.name}}</a></li>
                             {% endfor %}
                             <!-- dinamikus kategória vége-->
 
                             <li class="divider"></li>
                             <li><a href="#">Legkedveltebb receptek</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Legfrissebb receptek</a></li>
+                            <li><a href="{% url "newestrecipes" %}">Legfrissebb receptek</a></li>
                         </ul>
                     </li>
                     <!-- Receptek menü vége /leugró/ -->
 
                 </ul>
                 <!-- Keresés kezdete -->
-                <form class="navbar-form navbar-left" role="search">
+                <form class="navbar-form navbar-left" role="search" action="{% url "search" %}" method="GET">
                     <div class="form-group">
-                        <input type="text" class="form-control kereses" placeholder="Keresés">
+                        <input type="text" class="form-control kereses" name="Kereses" placeholder="Keresés">
                     </div>
                     <button type="submit" class="btn btn-default">Keresés</button>
                 </form>
                 <!-- Kereső gomb vége -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Belépés gomb-->
-                    <li><a href="#">Belépés</a></li>
+                    <li><a href="{% url "login" %}">Belépés</a></li>
                     <!-- Regisztráció gomb -->
-                    <li><a href="#">Regisztráció</a></li>
+                    <li><a href="{% url "register" %}">Regisztráció</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

@@ -1,4 +1,4 @@
-.addtip td {
+.addtip td, .addrecipes td {
     color: #F5AB76;
 }
 
@@ -10,6 +10,12 @@ body {
     padding-left: 200px;
     text-align: justify;
     padding-right: 50px;
+}
+
+.login_btn {
+    background-color: #F5AB76;
+    font-family: 'Kaushan Script', cursive;
+    color: #ffffff;
 }
 
 .btn-primary {
@@ -32,10 +38,15 @@ footer {
     padding-left: 15px;
     background-color: #F0F0F0;
     margin-top: 20px;
+    clear: both;
 }
 
 .kereses {
     font-style: italic;
+}
+
+.login {
+    margin: 0 auto;
 }
 
 label {
@@ -69,7 +80,7 @@ label {
     color: #F5AB76;
 }
 
-.tiptitle {
+.tiptitle, .recipetitle {
     color: #F5AB76;
     font-family: 'Kaushan Script', cursive;
 }
