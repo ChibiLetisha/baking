@@ -7,16 +7,35 @@
     <ul class="nav nav-pills nav-stacked">
       <li><a href="{% url "newrecipes" %}">Recept létrehozása</a></li>
       <li><a href="{% url "myrecipes" %}">Saját receptjeim</a></li>
-      <li><a href="#">Kommentjeim</a></li>
+      <li><a href="{% url "myrecipecomments" %}">Kommentjeim</a></li>
     </ul>
     <!-- saját recept menü vége -->
 
     <!-- recept bejegyzések -->
     <div class="bejegyzes">
         <h1 class="recipetitle">{{ recipe.title }}</h1>
+        {% if recipe.picture %}<img src="{{ recipe.picture.url }}" class="picture">{% endif %}
         <p>{{ recipe.post }}</p>
     </div>
-    <!-- recept bejegyzések vége -->
 
+<form action="" method="POST">
+    <table class="recipecomment">
+        {{ commentform.as_table }}
+        {% csrf_token %}
+        <tr>
+            <td>
+                 <button type="submit" class="btn login_btn">Küldés</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+    <!-- recept bejegyzések vége -->
+<div class="comments">
+    {% for comment in comments %}
+        <h1>{{ comment.user.username }}</h1>
+        <p>{{ comment.post }}</p>
+    {% endfor %}
+</div>
 {% endblock %}
 <!-- tartalom vége -->

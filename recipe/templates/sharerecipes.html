@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+<!-- tartalom kezdete -->
+{% block tartalom %}
+
+<!-- saját recept menü kezdete -->
+{%  if user.is_authenticated %}
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="{% url "newrecipes" %}">Recept létrehozása</a></li>
+      <li><a href="{% url "myrecipes" %}">Saját receptjeim</a></li>
+      <li><a href="{% url "myrecipecomments" %}">Kommentjeim</a></li>
+    </ul>
+{% endif %}
+<!-- saját recept menü vége -->
+
+<!-- recept bejegyzések -->
+{% for recipe in recipes %}
+    <div class="bejegyzes">
+        <h1 class="tiptitle">{{ recipe.title }}
+        <div class = "deletebtn">
+            {% if user == recipe.user %}
+                <a href="{% url "deleterecipe" recipe.pk %}">[X]</a>
+            {% endif %}
+        </div>
+        </h1>
+        <p>{{ recipe.post|truncatewords:90|slice:"-4" }} <a href="{% url "post" recipe.pk %}">Tovább</a></p>
+        {% if not forloop.last %} <hr> {% endif %}
+    </div>
+{% empty %}
+    <p>Nincs ilyen recept.</p>
+{% endfor %}
+<!-- recept bejegyzések vége -->
+
+{% endblock %}
+<!-- tartalom vége -->

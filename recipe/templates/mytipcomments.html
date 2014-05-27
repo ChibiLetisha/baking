@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+<!-- tartalom kezdete -->
+{% block tartalom %}
+
+    <!-- saját tipp menü kezdete -->
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="{% url "newtips" %}">Tipp létrehozása</a></li>
+      <li><a href="{% url "mytips" %}">Saját tippjeim</a></li>
+      <li><a href="{% url "mytipcomments" %}">Kommentjeim</a></li>
+    </ul>
+    <!-- saját tipp menü vége -->
+
+    <div class="comments">
+        {% for comment in tipcomments %}
+            <h1>{{ comment.tip.title }}
+                <div class = "deletebtn">
+                    {% if user == comment.user %}
+                        <a href="{% url "deletetipcomment" comment.pk %}">[X]</a>
+                    {% endif %}
+                </div>
+            </h1>
+            <p>{{ comment.post }}</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+<!-- tartalom vége -->

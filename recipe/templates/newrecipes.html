@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+<!-- tartalom kezdete -->
+{% block tartalom %}
+
+<!-- saját recept menü kezdete -->
+<ul class="nav nav-pills nav-stacked">
+  <li><a href="{%  url "newrecipes" %}">Recept létrehozása</a></li>
+  <li><a href="{% url "myrecipes" %}">Saját receptjeim</a></li>
+  <li><a href="{% url "myrecipecomments" %}">Kommentjeim</a></li>
+</ul>
+<!-- saját recept menü vége -->
+
+<!-- újrecept bejegyzések -->
+<form action="" method="post" enctype="multipart/form-data">
+<table class="addrecipe">
+    {% csrf_token %}
+    {{ newrecipes.as_table }}
+    <tr>
+        <td colspan="2">
+            <!-- Létrehozás gomb -->
+            <input type="submit" class="btn btn-primary" value="Létrehozás">
+            <!-- Mégse gomb -->
+            <a href="{% url "sharerecipes" %}" class="btn btn-danger">Mégse</a>
+        </td>
+    </tr>
+</table>
+</form>
+<!-- újrecept bejegyzések vége -->
+
+{% endblock %}
+<!-- tartalom vége -->%}

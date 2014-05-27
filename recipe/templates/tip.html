@@ -7,7 +7,7 @@
     <ul class="nav nav-pills nav-stacked">
       <li><a href="{% url "newtips" %}">Tipp létrehozása</a></li>
       <li><a href="{% url "mytips" %}">Saját tippjeim</a></li>
-      <li><a href="#">Kommentjeim</a></li>
+      <li><a href="{% url "mytipcomments" %}">Kommentjeim</a></li>
     </ul>
     <!-- saját tipp menü vége -->
 
@@ -17,6 +17,26 @@
         <p>{{ tip.post }}</p>
     </div>
     <!-- tipp bejegyzések vége -->
+
+<form action="" method="POST">
+    <table class="recipecomment">
+        {{ commentform.as_table }}
+        {% csrf_token %}
+        <tr>
+            <td>
+                 <button type="submit" class="btn login_btn">Küldés</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+    <!-- recept bejegyzések vége -->
+<div class="comments">
+    {% for comment in comments %}
+        <h1>{{ comment.user.username }}</h1>
+        <p>{{ comment.post }}</p>
+    {% endfor %}
+</div>
 
 {% endblock %}
 <!-- tartalom vége -->

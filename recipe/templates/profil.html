@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+<!-- tartalom kezdete -->
+{% block tartalom %}
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+    <table class="profil">
+        {{ User.as_table }}
+        {{ UserProfile.as_table }}
+        <tr>
+            <td><input type="submit" class="btn btn-primary" value="Mentés"></td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}
+<!-- tartalom vége -->

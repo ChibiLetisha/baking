@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+<!-- tartalom kezdete -->
+{% block tartalom %}
+
+<!-- saját recept menü kezdete -->
+{%  if user.is_authenticated %}
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="{% url "newrecipes" %}">Recept létrehozása</a></li>
+      <li><a href="{% url "myrecipes" %}">Saját receptjeim</a></li>
+      <li><a href="{% url "myrecipecomments" %}">Kommentjeim</a></li>
+    </ul>
+{% endif %}
+<!-- saját recept menü vége -->
+
+    <div class="comments">
+        {% for comment in recipecomments %}
+            <h1>{{ comment.recipe.title }}
+                <div class = "deletebtn">
+                    {% if user == comment.user %}
+                        <a href="{% url "deleterecipecomment" comment.pk %}">[X]</a>
+                    {% endif %}
+                </div>
+            </h1>
+            <p>{{ comment.post }}</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+<!-- tartalom vége -->

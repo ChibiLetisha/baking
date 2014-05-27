@@ -1,4 +1,4 @@
-.addtip td, .addrecipes td {
+.addtip td, .addrecipe td, .login td {
     color: #F5AB76;
 }
 
@@ -12,10 +12,9 @@ body {
     padding-right: 50px;
 }
 
-.login_btn {
-    background-color: #F5AB76;
+.btn-default {
+    color: #F5AB76;
     font-family: 'Kaushan Script', cursive;
-    color: #ffffff;
 }
 
 .btn-primary {
@@ -26,6 +25,27 @@ body {
 .container {
     background-color: #ffffff;
     padding : 0px;
+}
+
+.comments {
+    color: #F5AB76;
+    padding-left: 200px;
+    font-family: "Kaushan Script", cursive;
+    padding-right: 50px;
+}
+
+.deletebtn {
+    display: inline;
+}
+
+.deletebtn a {
+    color: red;
+    float: right;
+    font-size: 15px;
+}
+
+.dropdown-menu li a {
+    color: #F5AB76;
 }
 
 footer {
@@ -47,6 +67,12 @@ footer {
 
 .login {
     margin: 0 auto;
+}
+
+.login_btn {
+    background-color: #F5AB76;
+    font-family: 'Kaushan Script', cursive;
+    color: #ffffff;
 }
 
 label {
@@ -80,14 +106,40 @@ label {
     color: #F5AB76;
 }
 
+td {
+    padding-left: 15px;
+}
+
 .tiptitle, .recipetitle {
     color: #F5AB76;
     font-family: 'Kaushan Script', cursive;
 }
 
+.profil textarea {
+    color: #F5AB76;
+}
+
 p a {
     color: #F5AB76;
     text-decoration: none;
+}
+
+.picture {
+    max-width: 500px;
+    float: right;
+    padding: 10px;
+}
+
+.profil {
+    margin-left: 30px;
+}
+
+.profil input:not([type="submit"]) {
+    color: #F5AB76;
+}
+
+.recipecomment {
+    margin-left: 200px;
 }
 
 .white-bg {
